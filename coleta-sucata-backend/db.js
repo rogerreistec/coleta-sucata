@@ -13,5 +13,7 @@ pool.connect((err, client, release) => {
     return console.error('Erro ao conectar ao banco de dados', err);
   }
   console.log('Conexão com o banco de dados estabelecida!');
+
+
 });
 
