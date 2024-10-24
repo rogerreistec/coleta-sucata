@@ -1,5 +1,5 @@
 {
-  "name": "coleta-sucata",
+  "name": "coleta-sucata-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:coleta-sucata": "node dist/coleta-sucata/server/server.mjs"
+    "serve:ssr:coleta-sucata-frontend": "node dist/coleta-sucata-frontend/server/server.mjs"
   },
   "private": true,
   "dependencies": {

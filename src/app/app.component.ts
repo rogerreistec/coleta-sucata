@@ -6,8 +6,8 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'], // Corrigido de styleUrl para styleUrls
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'coleta-sucata';
+  title = 'coleta-sucata-frontend';
 }
