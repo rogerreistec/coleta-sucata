@@ -1,3 +1,4 @@
-# Arquivos de cache
-.cache/
-.config/
+node_modules/
+*.log
+dist/
+build/
