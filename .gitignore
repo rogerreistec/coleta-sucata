@@ -1,4 +1,63 @@
+# Node.js dependencies
 node_modules/
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
 dist/
 build/
+
+# Temporary files
+.tmp/
+.cache/
+
+# Coverage directory for test results
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor folders and settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore Visual Studio and .NET files if applicable
+*.csproj
+*.sln
+*.suo
+*.user
+*.pdb
+*.aps
+*.vspscc
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+
+# Ignore Flax project files
+Binaries/
+Cache/
+Logs/
+Output/
+Screenshots/
+*.HotReload.*
