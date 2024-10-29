@@ -11,6 +11,8 @@ import { Component } from '@angular/core';
   `,
   styles: ``
 })
+    
+
 export class CadastroColetoresComponent {
 
 }
