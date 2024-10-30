@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Node.js dependencies
 node_modules/
 
@@ -61,3 +62,9 @@ Logs/
 Output/
 Screenshots/
 *.HotReload.*
+=======
+node_modules/
+*.log
+dist/
+build/
+>>>>>>> d5175444 (Remove arquivos desnecessários do histórico)
