@@ -1,53 +1,50 @@
-/* Estilos globais para a página */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background: url('https://images.unsplash.com/photo-1589927986089-3586aefc5e2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center fixed; /* Imagem de fundo */
-background-size: cover; /* Para cobrir toda a área */
-
-}
-
-/* Container principal da página */
+/* Estilos específicos para o componente Home */
 .home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Centraliza verticalmente */
-  text-align: center;
-  height: 100vh; /* Para ocupar toda a altura da viewport */
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Fundo translúcido para melhor visibilidade do texto */
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  margin: 0 auto; /* Para centralizar horizontalmente */
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos do cabeçalho */
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 40px; /* Aumenta a distância do cabeçalho */
+}
+
 .header h1 {
-  font-size: 2.5em;
-  color: #2c3e50; /* Cor do texto */
-  margin-bottom: 0.5em;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+  border: 1px solid #ccc; /* Adiciona borda */
+  padding: 10px; /* Adiciona espaço interno */
+  border-radius: 5px; /* Arredonda os cantos */
 }
 
 .header p {
-  font-size: 1.2em;
-  color: #34495e; /* Cor do texto */
-  margin-bottom: 1.5em;
+  font-size: 1.2rem;
+  margin: 0; /* Remove a margem */
+  font-weight: bold; /* Coloca em negrito */
+  border: 1px solid #ccc; /* Adiciona borda */
+  padding: 10px; /* Adiciona espaço interno */
+  border-radius: 5px; /* Arredonda os cantos */
 }
 
-/* Estilos dos botões */
+/* Botões */
 .button-container {
   display: flex;
-  gap: 20px;
+  justify-content: center; /* Alinha os botões no centro */
+  gap: 20px; /* Espaçamento entre os botões */
+  margin: 20px 0; /* Espaço acima e abaixo dos botões */
 }
 
 .button-container button {
-  background-color: #27ae60; /* Cor de fundo dos botões */
+  background-color: #27ae60;
   color: white;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 15px 30px;
   border: none;
   border-radius: 10px;
@@ -57,7 +54,7 @@ background-size: cover; /* Para cobrir toda a área */
 }
 
 .button-container button:hover {
-  background-color: #2ecc71; /* Cor de fundo ao passar o mouse */
+  background-color: #2ecc71;
   transform: translateY(-3px);
 }
 
@@ -66,27 +63,13 @@ background-size: cover; /* Para cobrir toda a área */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilização responsiva para dispositivos móveis */
-@media (max-width: 600px) {
-  .home-container {
-    margin: 20px;
-  }
-
-  .header h1 {
-    font-size: 2em;
-  }
-
-  .header p {
-    font-size: 1em;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .button-container button {
-    font-size: 1em;
-    padding: 12px 20px;
-  }
+/* Estilos de texto para a parte inferior */
+.footer-text {
+  text-align: center;
+  font-size: 1rem; /* Tamanho da fonte */
+  margin-top: 40px; /* Espaço acima */
+  font-weight: bold; /* Coloca em negrito */
+  border: 1px solid #ccc; /* Adiciona borda */
+  padding: 10px; /* Adiciona espaço interno */
+  border-radius: 5px; /* Arredonda os cantos */
 }

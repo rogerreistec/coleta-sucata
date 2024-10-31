@@ -1,71 +1,87 @@
-body {
+/* Estilos globais para fonte e espaçamento */
+body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    height: 100%;
+    color: #333;
+    background-image: url('https://previews.123rf.com/images/karepastock/karepastock1811/karepastock181101923/150557384-reciclagem-de-carros-velhos-usados-e-destru%C3%ADdos-desmontagem-de-pe%C3%A7as-em-p%C3%A1tios-de-sucata.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-.container {
+/* Container centralizado */
+.home-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     color: #333;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente para destacar o formulário */
-    border-radius: 10px; /* Adiciona bordas arredondadas ao container */
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-    color: #2c3e50;
-    font-size: 1.8rem;
+/* Cabeçalho */
+.header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Aumenta a distância do cabeçalho */
 }
 
-form {
+.header h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+    border: 1px solid #ccc; /* Adiciona borda */
+    padding: 10px; /* Adiciona espaço interno */
+    border-radius: 5px; /* Arredonda os cantos */
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin: 0; /* Remove a margem */
+    font-weight: bold; /* Coloca em negrito */
+    border: 1px solid #ccc; /* Adiciona borda */
+    padding: 10px; /* Adiciona espaço interno */
+    border-radius: 5px; /* Arredonda os cantos */
+}
+
+/* Botões */
+.button-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center; /* Alinha os botões no centro */
+    gap: 20px; /* Espaçamento entre os botões */
+    margin: 20px 0; /* Espaço acima e abaixo dos botões */
 }
 
-label {
-    font-size: 1rem;
-    color: #555;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="email"] {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus {
-    outline: none;
-    border-color: #3498db;
-}
-
-.form-button {
-    background-color: #3498db;
-    color: #fff;
+.button-container button {
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
-    padding: 10px 0;
-    font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.form-button:hover {
-    background-color: #2980b9;
+.button-container button:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px);
 }
 
-/* Estilos para o fundo da página */
-body {
-    background-image: url('https://previews.123rf.com/images/karepastock/karepastock1811/karepastock181101923/150557384-reciclagem-de-carros-velhos-usados-e-destru%C3%ADdos-desmontagem-de-pe%C3%A7as-em-p%C3%A1tios-de-sucata.jpg'); /* Insira o caminho correto para sua imagem */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    color: white; /* Cor do texto geral */
+.button-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de texto para a parte inferior */
+.footer-text {
+    text-align: center;
+    font-size: 1rem; /* Tamanho da fonte */
+    margin-top: 40px; /* Espaço acima */
+    font-weight: bold; /* Coloca em negrito */
+    border: 1px solid #ccc; /* Adiciona borda */
+    padding: 10px; /* Adiciona espaço interno */
+    border-radius: 5px; /* Arredonda os cantos */
 }
