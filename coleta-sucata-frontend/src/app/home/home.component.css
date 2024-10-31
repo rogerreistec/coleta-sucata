@@ -1,27 +1,92 @@
-.container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+/* Estilos globais para a página */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: url('https://images.unsplash.com/photo-1589927986089-3586aefc5e2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center fixed; /* Imagem de fundo */
+background-size: cover; /* Para cobrir toda a área */
+
+}
+
+/* Container principal da página */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center;
+  height: 100vh; /* Para ocupar toda a altura da viewport */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* Fundo translúcido para melhor visibilidade do texto */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto; /* Para centralizar horizontalmente */
+}
+
+/* Estilos do cabeçalho */
+.header h1 {
+  font-size: 2.5em;
+  color: #2c3e50; /* Cor do texto */
+  margin-bottom: 0.5em;
+}
+
+.header p {
+  font-size: 1.2em;
+  color: #34495e; /* Cor do texto */
+  margin-bottom: 1.5em;
+}
+
+/* Estilos dos botões */
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button-container button {
+  background-color: #27ae60; /* Cor de fundo dos botões */
+  color: white;
+  font-size: 1em;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button-container button:hover {
+  background-color: #2ecc71; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-3px);
+}
+
+.button-container button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização responsiva para dispositivos móveis */
+@media (max-width: 600px) {
+  .home-container {
+    margin: 20px;
   }
-  
-  h1 {
-    color: #333;
+
+  .header h1 {
+    font-size: 2em;
   }
-  
+
+  .header p {
+    font-size: 1em;
+  }
+
   .button-container {
-    margin: 20px 0;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  button {
-    background-color: #4CAF50; /* Verde */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px; /* Espaçamento entre os botões */
+
+  .button-container button {
+    font-size: 1em;
+    padding: 12px 20px;
   }
-  
-  button:hover {
-    background-color: #45a049; /* Verde mais escuro */
-  }
-  
+}

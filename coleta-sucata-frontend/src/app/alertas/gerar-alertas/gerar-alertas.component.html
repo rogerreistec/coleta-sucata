@@ -1,12 +1,13 @@
 <div class="container">
-    <h1>Alertas</h1>
-    <form>
-        <label for="alerta-liberado">ALERTA MATERIAL LIBERADO PARA COLETA:</label>
-        <input type="text" id="alerta-liberado" name="alerta-liberado">
-
-        <label for="alerta-agardando">ALERTA MATERIAL AGUARDANDO RETIRADA:</label>
-        <input type="text" id="alerta-agardando" name="alerta-agardando">
-
-        <button type="submit">Enviar Alerta</button>
+    <h2>Alertas sobre Materiais</h2>
+    <form (submit)="onSubmit()">
+      <label for="liberado">Material Liberado para Coleta:</label>
+      <input type="text" id="liberado" name="liberado" required />
+  
+      <label for="aguardando">Material Aguardando Retirada:</label>
+      <input type="text" id="aguardando" name="aguardando" required />
+  
+      <button type="submit" class="form-button">Enviar Alerta</button>
     </form>
-</div>
+  </div>
+  
