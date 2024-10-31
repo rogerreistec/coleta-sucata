@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-gerar-alertas',
-  standalone: true,
-  imports: [],
   templateUrl: './gerar-alertas.component.html',
-  styleUrl: './gerar-alertas.component.css'
+  styleUrls: ['./gerar-alertas.component.css']
 })
 export class GerarAlertasComponent {
-
+  onSubmit() {
+    // Aqui você pode adicionar a lógica para enviar o alerta
+    console.log("Formulário de alertas enviado!");
+  }
 }
