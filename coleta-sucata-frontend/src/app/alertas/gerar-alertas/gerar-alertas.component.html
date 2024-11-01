@@ -1,12 +1,13 @@
 <div class="container">
-  <h2>Alertas sobre Materiais</h2>
-  <form (submit)="onSubmit()">
+    <h2>Alertas sobre Materiais</h2>
+    <form (submit)="onSubmit()">
       <label for="liberado">Material Liberado para Coleta:</label>
-      <input type="text" id="liberado" name="liberado" required autocomplete="off" />
-
+      <input type="text" id="liberado" name="liberado" required />
+  
       <label for="aguardando">Material Aguardando Retirada:</label>
-      <input type="text" id="aguardando" name="aguardando" required autocomplete="off" />
-
+      <input type="text" id="aguardando" name="aguardando" required />
+  
       <button type="submit" class="form-button">Enviar Alerta</button>
-  </form>
-</div>
+    </form>
+  </div>
+  

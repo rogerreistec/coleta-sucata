@@ -1,72 +1,44 @@
-/* Estilos globais para fonte e espaçamento */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
-  color: #333;
-  background-image: url('https://previews.123rf.com/images/karepastock/karepastock1811/karepastock181101923/150557384-reciclagem-de-carros-velhos-usados-e-destru%C3%ADdos-desmontagem-de-pe%C3%A7as-em-p%C3%A1tios-de-sucata.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Container centralizado */
 .container {
-  max-width: 600px;
-  margin: 20px auto; /* Margem para separar os contêineres */
+  max-width: 500px;
+  margin: auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-/* Cabeçalho */
 h2 {
-  color: #2c3e50;
-  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Formulário */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  color: #333;
 }
 
 label {
-  font-size: 1rem;
-  color: #555;
+  display: block;
+  margin: 10px 0 5px;
+  color: #666;
 }
 
 input[type="text"],
 input[type="tel"],
 input[type="email"] {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus {
-  outline: none;
-  border-color: #3498db;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .form-button {
-  background-color: #3498db;
-  color: #fff;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 0;
-  font-size: 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 .form-button:hover {
-  background-color: #2980b9;
+  background-color: #45a049;
 }
