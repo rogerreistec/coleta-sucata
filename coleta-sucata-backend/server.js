@@ -1,17 +1,20 @@
-// server.ts
+// server.js
 const express = require('express');
-const cors = require('cors');
-const coletorRoutes = require('./routes/coletores');
-const dadosRoute = require('./routes/dados.route');
+const bodyParser = require('body-parser');
+const coletorRoutes = require('./routes/coletorRoutes');
+const pontoColetaRoutes = require('./routes/pontoColetaRoutes');
+const alertaRoutes = require('./routes/alertaRoutes');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 3000;
 
-app.use('/coletores', coletorRoutes);
-app.use('/api', dadosRoute);
+app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
+// Rotas
+app.use('/api/coletores', coletorRoutes);
+app.use('/api/pontos-coleta', pontoColetaRoutes);
+app.use('/api/alertas', alertaRoutes);
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
