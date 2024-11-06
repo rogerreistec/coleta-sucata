@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { DadosService } from '../../services/dados.service';
+import { ColetaSucataService } from '../../services/coleta-sucata.service';
 
 @Component({
   selector: 'app-gerar-alertas',
   templateUrl: './gerar-alertas.component.html',
-  styleUrls: ['./gerar-alertas.component.css']
+  styleUrls: ['./gerar-alertas.component.css'],
+  standalone: true
 })
 export class GerarAlertasComponent {
-  constructor(private dadosService: DadosService) {}
+  constructor(private coletaSucataService: ColetaSucataService) {}
 
   onSubmit(event: Event) {
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
@@ -16,14 +17,13 @@ export class GerarAlertasComponent {
     const liberado = (form.elements.namedItem('liberado') as HTMLInputElement).value;
     const aguardando = (form.elements.namedItem('aguardando') as HTMLInputElement).value;
 
-    // Criação do objeto de alerta com as propriedades corretas
-    const alerta = {
+    const alertaData = {
       mensagem: `${liberado} e ${aguardando}`, // Combine ou ajuste conforme sua necessidade
       tipo: 'informativo' // Ou o tipo que você precisa
     };
 
-    // Chamada ao serviço para enviar o alerta
-    this.dadosService.gerarAlerta(alerta).subscribe(
+    // Chamada ao serviço para gerar o alerta
+    this.coletaSucataService.addAlerta(alertaData).subscribe(
       response => {
         console.log('Alerta gerado com sucesso:', response);
       },
@@ -34,3 +34,4 @@ export class GerarAlertasComponent {
     );
   }
 }
+

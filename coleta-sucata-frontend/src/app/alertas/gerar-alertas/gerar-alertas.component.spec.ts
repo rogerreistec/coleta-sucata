@@ -1,23 +1,36 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ColetaSucataService } from '../../services/coleta-sucata.service';
 
-import { GerarAlertasComponent } from './gerar-alertas.component';
+@Component({
+  selector: 'app-gerar-alertas',
+  templateUrl: './gerar-alertas.component.html',
+  styleUrls: ['./gerar-alertas.component.css'],
+  standalone: true
+})
+export class GerarAlertasComponent {
+  constructor(private coletaSucataService: ColetaSucataService) {}
 
-describe('GerarAlertasComponent', () => {
-  let component: GerarAlertasComponent;
-  let fixture: ComponentFixture<GerarAlertasComponent>;
+  onSubmit(event: Event) {
+    event.preventDefault(); // Previne o comportamento padrão de envio do formulário
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [GerarAlertasComponent]
-    })
-    .compileComponents();
+    const form = event.target as HTMLFormElement;
+    const liberado = (form.elements.namedItem('liberado') as HTMLInputElement).value;
+    const aguardando = (form.elements.namedItem('aguardando') as HTMLInputElement).value;
 
-    fixture = TestBed.createComponent(GerarAlertasComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    const alertaData = {
+      mensagem: `${liberado} e ${aguardando}`, // Combine ou ajuste conforme sua necessidade
+      tipo: 'informativo' // Ou o tipo que você precisa
+    };
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    // Chamada ao serviço para gerar o alerta
+    this.coletaSucataService.addAlerta(alertaData).subscribe(
+      response => {
+        console.log('Alerta gerado com sucesso:', response);
+      },
+      error => {
+        console.error('Erro ao gerar alerta:', error);
+        alert('Erro ao gerar alerta: ' + (error.error?.message || error.message || 'Erro desconhecido'));
+      }
+    );
+  }
+}

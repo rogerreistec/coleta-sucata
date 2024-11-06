@@ -1,13 +1,12 @@
-// controllers/alertaController.js
 const db = require('../db');
 
 // Função para criar um alerta
 exports.createAlerta = async (req, res) => {
-    const { mensagem, tipo } = req.body;
+    const { tipo_alerta, descricao, mensagem } = req.body;
     try {
         const result = await db.query(
-            'INSERT INTO alerta (mensagem, tipo) VALUES ($1, $2) RETURNING *',
-            [mensagem, tipo]
+            'INSERT INTO alerta (tipo_alerta, descricao, mensagem) VALUES ($1, $2, $3) RETURNING *',
+            [tipo_alerta, descricao, mensagem]
         );
         res.status(201).json(result.rows[0]);
     } catch (err) {

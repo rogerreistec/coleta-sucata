@@ -1,29 +1,34 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { ColetaSucataService } from '../services/coleta-sucata.service';
 
 @Component({
   selector: 'app-cadastro-coletores',
   templateUrl: './cadastro-coletores.component.html',
-  styleUrls: ['./cadastro-coletores.component.css']
+  styleUrls: ['./cadastro-coletores.component.css'],
+  standalone: true
 })
 export class CadastroColetoresComponent {
-  nome: string = '';
-  telefone: string = '';
-  email: string = '';
+  @ViewChild('nome') nomeInput!: ElementRef;
+  @ViewChild('telefone') telefoneInput!: ElementRef;
+  @ViewChild('email') emailInput!: ElementRef;
+  @ViewChild('endereco') enderecoInput!: ElementRef;
 
-  constructor(private http: HttpClient) {}
+  constructor(private coletaSucataService: ColetaSucataService) {}
 
-  onSubmit() {
+  onSubmit(event: Event) {
+    event.preventDefault();
+
     const novoColetor = {
-      nome: this.nome,
-      telefone: this.telefone,
-      email: this.email
+      nome: this.nomeInput.nativeElement.value,
+      telefone: this.telefoneInput.nativeElement.value,
+      email: this.emailInput.nativeElement.value,
+      endereco: this.enderecoInput.nativeElement.value,
     };
 
-    this.http.post('http://localhost:3000/api/coletores', novoColetor).subscribe(
+    // Chamada ao serviço para adicionar o coletor
+    this.coletaSucataService.addColetor(novoColetor).subscribe(
       response => {
         console.log("Coletor cadastrado com sucesso!", response);
-        // Limpar os campos do formulário ou fazer outra ação
         this.resetForm();
       },
       error => {
@@ -33,8 +38,10 @@ export class CadastroColetoresComponent {
   }
 
   resetForm() {
-    this.nome = '';
-    this.telefone = '';
-    this.email = '';
+    this.nomeInput.nativeElement.value = '';
+    this.telefoneInput.nativeElement.value = '';
+    this.emailInput.nativeElement.value = '';
+    this.enderecoInput.nativeElement.value = '';
   }
 }
+

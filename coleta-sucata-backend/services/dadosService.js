@@ -5,8 +5,7 @@ const Alerta = require('../models/alerta'); // Modelo de Alerta
 // Função para criar um coletor
 const cadastrarColetor = async (data) => {
   try {
-    const coletor = new Coletor(data);
-    await coletor.save();
+    const coletor = await Coletor.create(data); // Use 'create' diretamente, sem 'new'
     return coletor;
   } catch (error) {
     throw error;
@@ -16,23 +15,27 @@ const cadastrarColetor = async (data) => {
 // Função para criar um ponto de coleta
 const cadastrarPontoColeta = async (data) => {
   try {
-    const pontoColeta = new PontoColeta(data);
-    await pontoColeta.save();
+    const pontoColeta = await PontoColeta.create(data); // Use 'create' diretamente
     return pontoColeta;
   } catch (error) {
     throw error;
   }
 };
 
-// Função para gerar alertas
 const gerarAlerta = async (data) => {
   try {
-    const alerta = new Alerta(data);
-    await alerta.save();
+    const alerta = await Alerta.create({
+      tipo_alerta: data.tipo_alerta,  // Certifique-se de que está usando tipo_alerta
+      descricao: data.descricao,
+      mensagem: data.mensagem
+    });
     return alerta;
   } catch (error) {
     throw error;
   }
 };
+
+module.exports = { cadastrarColetor, cadastrarPontoColeta, gerarAlerta };
+
 
 module.exports = { cadastrarColetor, cadastrarPontoColeta, gerarAlerta };

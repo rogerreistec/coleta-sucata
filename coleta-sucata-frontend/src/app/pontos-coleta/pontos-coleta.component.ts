@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColetaSucataService } from '../services/coleta-sucata.service';
 
 @Component({
   selector: 'app-pontos-coleta',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   standalone: true
 })
 export class PontosColetaComponent {
+  constructor(private coletaSucataService: ColetaSucataService) {}
+
   onSubmit(event: Event) {
     event.preventDefault(); // Evita o recarregamento da página
     const form = event.target as HTMLFormElement;
@@ -16,10 +19,21 @@ export class PontosColetaComponent {
     const telefone = (form.elements.namedItem('telefone') as HTMLInputElement).value;
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
 
-    console.log('Nome do Local:', nomeLocal);
-    console.log('Endereço:', endereco);
-    console.log('Telefone:', telefone);
-    console.log('Email:', email);
-    // Processar os dados conforme necessário
+    const pontoColetaData = {
+      nomeLocal,
+      endereco,
+      telefone,
+      email
+    };
+
+    // Chamada ao serviço para adicionar o ponto de coleta
+    this.coletaSucataService.addPontoColeta(pontoColetaData).subscribe(
+      response => {
+        console.log('Ponto de Coleta cadastrado com sucesso!', response);
+      },
+      error => {
+        console.error('Erro ao cadastrar ponto de coleta:', error);
+      }
+    );
   }
 }
