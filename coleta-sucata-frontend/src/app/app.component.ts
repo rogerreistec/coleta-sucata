@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DadosService } from './services/dados.service';
+import { ColetaSucataService } from './services/coleta-sucata.service'; // Corrigido para o serviço correto
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
   title = 'coleta-sucata-frontend';
   dados: any[] = [];
 
-  constructor(private dadosService: DadosService) {}
+  constructor(private coletaSucataService: ColetaSucataService) {} // Corrigido para o serviço correto
 
   ngOnInit(): void {
-    this.dadosService.getDados().subscribe((dados) => {
+    this.coletaSucataService.getColetores().subscribe((dados: any) => { // Corrigido o método e o tipo de dados
       this.dados = dados;
     });
   }
