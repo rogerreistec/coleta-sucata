@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const coletorRoutes = require('./routes/coletorRoutes');
@@ -6,7 +5,7 @@ const pontoColetaRoutes = require('./routes/pontoColetaRoutes');
 const alertaRoutes = require('./routes/alertaRoutes');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Permite definir a porta via variável de ambiente
 
 app.use(bodyParser.json());
 
