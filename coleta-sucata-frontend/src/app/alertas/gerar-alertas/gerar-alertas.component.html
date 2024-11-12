@@ -1,12 +1,9 @@
-<div class="container">
-  <h2>Alertas sobre Materiais</h2>
-  <form (submit)="onSubmit($event)">
-    <label for="liberado">Material Liberado para Coleta:</label>
-    <input type="text" id="liberado" name="liberado" required />
-
-    <label for="aguardando">Material Aguardando Retirada:</label>
-    <input type="text" id="aguardando" name="aguardando" required />
-
-    <button type="submit" class="form-button">Enviar Alerta</button>
-  </form>
-</div>
+<form (ngSubmit)="onSubmit($event)">
+  <label for="alertaTipo">Tipo de Alerta</label>
+  <input type="text" id="alertaTipo" #alertaTipo placeholder="Tipo do Alerta" />
+  
+  <label for="alertaDescricao">Descrição do Alerta</label>
+  <input type="text" id="alertaDescricao" #alertaDescricao placeholder="Descrição do Alerta" />
+  
+  <button type="submit">Gerar Alerta</button>
+</form>

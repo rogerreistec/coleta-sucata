@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const coletorRoutes = require('./src/routes/coletorRoutes');
-const pontoColetaRoutes = require('./src/routes/pontoColetaRoutes');
-const alertaRoutes = require('./src/routes/alertaRoutes');
+const coletorRoutes = require('./routes/coletorRoutes');
+const pontoColetaRoutes = require('./routes/pontoColetaRoutes');
+const alertaRoutes = require('./routes/alertaRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;

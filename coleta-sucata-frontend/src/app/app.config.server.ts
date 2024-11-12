@@ -4,7 +4,7 @@ import { appConfig } from './app.config';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideServerRendering()
+    provideServerRendering() // Configuração para renderização no lado do servidor
   ]
 };
 
