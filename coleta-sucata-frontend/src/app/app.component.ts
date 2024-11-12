@@ -5,7 +5,7 @@ import { ColetaSucataService } from './services/coleta-sucata.service'; // Corri
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet], // Adicionando a dependência do RouterOutlet
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

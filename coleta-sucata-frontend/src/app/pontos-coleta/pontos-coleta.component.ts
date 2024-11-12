@@ -1,39 +1,33 @@
-import { Component } from '@angular/core';
-import { ColetaSucataService } from '../services/coleta-sucata.service';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-pontos-coleta',
   templateUrl: './pontos-coleta.component.html',
-  styleUrls: ['./pontos-coleta.component.css'],
-  standalone: true
+  styleUrls: ['./pontos-coleta.component.css']
 })
-export class PontosColetaComponent {
-  constructor(private coletaSucataService: ColetaSucataService) {}
+export class PontosColetaComponent implements AfterViewInit {
+  
+  // Usando ViewChild para pegar o formulário
+  @ViewChild('form') formElement!: ElementRef;
 
-  onSubmit(event: Event) {
-    event.preventDefault(); // Evita o recarregamento da página
-    const form = event.target as HTMLFormElement;
+  // Método que é chamado após a view ser inicializada
+  ngAfterViewInit() {
+    // Verificando se o ViewChild foi inicializado corretamente
+    if (this.formElement) {
+      console.log('Form element foi encontrado:', this.formElement.nativeElement);
+    } else {
+      console.error('Form element não foi encontrado!');
+    }
+  }
 
-    const nomeLocal = (form.elements.namedItem('nomeLocal') as HTMLInputElement).value;
-    const endereco = (form.elements.namedItem('endereco') as HTMLInputElement).value;
-    const telefone = (form.elements.namedItem('telefone') as HTMLInputElement).value;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-
-    const pontoColetaData = {
-      nomeLocal,
-      endereco,
-      telefone,
-      email
-    };
-
-    // Chamada ao serviço para adicionar o ponto de coleta
-    this.coletaSucataService.addPontoColeta(pontoColetaData).subscribe(
-      response => {
-        console.log('Ponto de Coleta cadastrado com sucesso!', response);
-      },
-      error => {
-        console.error('Erro ao cadastrar ponto de coleta:', error);
-      }
-    );
+  // Método de submit do formulário
+  onSubmit() {
+    // Acessando o nativeElement do formulário no método onSubmit
+    if (this.formElement) {
+      console.log('Form element no onSubmit:', this.formElement.nativeElement);
+      // Aqui você pode acessar o formulário e fazer qualquer ação necessária
+    } else {
+      console.error('Form element não encontrado no submit!');
+    }
   }
 }
